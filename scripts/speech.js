@@ -50,6 +50,7 @@ $(function(){
   recog.onresult = function(e){
     for(i;i<e.results.length;i++){
       var temp = e.results[i][0].transcript;
+      $('#transcript').text(temp);
       res = (temp.split(' '));
       console.log('got results', res);
       if(res.length >= 3){
@@ -65,6 +66,7 @@ $(function(){
     processResults(res);
     res = [];
     i = 0;
+    // recog.start();
   };
 
 
